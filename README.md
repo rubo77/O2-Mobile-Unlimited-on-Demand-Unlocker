@@ -6,6 +6,18 @@ user-defined number at a configurable interval (seconds/minutes/hours).
 > Use responsibly. Sending unsolicited bulk SMS may be illegal and will cost
 > money depending on your mobile plan.
 
+## Use case: O2 "Unlimited On Demand" top-ups
+
+The O2 *Mobile Unlimited On Demand* tariff includes 10 GB of high-speed data
+per day. Once 80 % of that is used, O2 sends an SMS from **80112**; replying
+with **WEITER** to **80112** books another 2 GB of high-speed data — free of
+charge and repeatable without limit.
+
+Doing this manually every time is tedious (and naive auto-reply loops forever
+on O2's confirmation SMS), so this app simply sends `WEITER` to `80112` on a
+fixed schedule — **every 30 minutes** is a good default. The input fields are
+pre-filled accordingly; change them if your workflow differs.
+
 ## Features
 
 - Configurable recipient number, message text and interval
@@ -22,7 +34,10 @@ Point `ANDROID_HOME` at the SDK or create `local.properties` with `sdk.dir=...`.
 ```bash
 ./gradlew assembleDebug        # builds app-debug.apk
 ./gradlew testDebugUnitTest    # runs JVM unit tests
+bash release.sh -u             # bump version + clean build + tests
 ```
+
+Releasing to F-Droid is documented in [dev/FDROID.md](dev/FDROID.md).
 
 ## Permissions
 

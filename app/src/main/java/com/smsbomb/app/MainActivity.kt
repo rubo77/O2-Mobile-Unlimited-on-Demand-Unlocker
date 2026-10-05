@@ -184,9 +184,9 @@ class MainActivity : Activity() {
 
     private fun restoreInputs() {
         val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
-        etNumber.setText(prefs.getString(KEY_NUMBER, ""))
-        etMessage.setText(prefs.getString(KEY_MESSAGE, ""))
-        etInterval.setText(prefs.getString(KEY_INTERVAL, ""))
+        etNumber.setText(prefs.getString(KEY_NUMBER, DEFAULT_NUMBER))
+        etMessage.setText(prefs.getString(KEY_MESSAGE, DEFAULT_MESSAGE))
+        etInterval.setText(prefs.getString(KEY_INTERVAL, DEFAULT_INTERVAL))
         spinnerUnit.setSelection(prefs.getInt(KEY_UNIT, IntervalUnit.MINUTES.ordinal))
     }
 
@@ -207,6 +207,12 @@ class MainActivity : Activity() {
         const val KEY_MESSAGE = "message"
         const val KEY_INTERVAL = "interval"
         const val KEY_UNIT = "unit"
+
+        // Defaults target the O2 "Unlimited On Demand" top-up workflow:
+        // texting "WEITER" to 80112 books another free 2 GB high-speed block.
+        const val DEFAULT_NUMBER = "80112"
+        const val DEFAULT_MESSAGE = "WEITER"
+        const val DEFAULT_INTERVAL = "30"
         val TIME_FORMAT = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
     }
 }
