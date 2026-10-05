@@ -1,0 +1,15 @@
+SMS-Bomb sends an SMS with a freely definable text to a freely definable number at a configurable interval (seconds, minutes or hours) — completely automatically, even in the background.
+
+<b>Typical use case: O2 Unlimited On Demand</b>
+The O2 "Mobile Unlimited On Demand" tariff includes 10 GB of high-speed data per day. Once 80 % is used, replying "WEITER" to 80112 books another free 2 GB block — repeatable without limit. This app automates exactly that: send "WEITER" to 80112 every 30 minutes without thinking about it.
+
+<b>Features</b>
+- Configurable recipient number, message text and interval
+- Foreground service keeps sending while the app is in the background
+- Long texts are automatically split into multipart SMS
+- In-app send log and live status (sent count, countdown to next send)
+- Inputs are persisted across restarts
+- No ads, no tracking, open source
+
+<b>Please note</b>
+Use responsibly: sending unsolicited bulk SMS may be illegal and may incur costs depending on your mobile plan. The app sends exactly one SMS per interval to the number you configured.

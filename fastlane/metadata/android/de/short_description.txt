@@ -1,0 +1,1 @@
+Versendet periodisch eine SMS mit eigenem Text an eine eigene Nummer im eingestellten Intervall.

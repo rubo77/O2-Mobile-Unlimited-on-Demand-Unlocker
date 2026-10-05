@@ -1,0 +1,3 @@
+- Erste Version
+- Periodischer SMS-Versand an einstellbare Nummer mit eigenem Text und Intervall
+- Sende-Protokoll und Live-Status in der App

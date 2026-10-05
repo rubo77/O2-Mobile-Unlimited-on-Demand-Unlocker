@@ -1,0 +1,3 @@
+- Initial release
+- Periodic SMS sending to a configurable number with custom text and interval
+- In-app send log and live status

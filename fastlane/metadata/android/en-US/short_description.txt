@@ -1,0 +1,1 @@
+Periodically sends an SMS with a custom text to a custom number at a set interval.
