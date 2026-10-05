@@ -2,7 +2,6 @@ package com.smsbomb.app
 
 /** Time unit chosen in the UI, with its length in milliseconds. */
 enum class IntervalUnit(val millisPerUnit: Long) {
-    SECONDS(1_000L),
     MINUTES(60_000L),
     HOURS(3_600_000L),
 }
@@ -18,12 +17,12 @@ object IntervalParser {
         return if (millis / unit.millisPerUnit == value) millis else null
     }
 
-    /** Formats a millisecond interval as a compact human-readable string like "5 min" or "90 s". */
+    /** Formats a millisecond interval as a compact human-readable string like "5min" or "1h 30min". */
     fun format(millis: Long): String {
         if (millis <= 0) return "0 s"
         val hours = millis / IntervalUnit.HOURS.millisPerUnit
         val minutes = (millis % IntervalUnit.HOURS.millisPerUnit) / IntervalUnit.MINUTES.millisPerUnit
-        val seconds = (millis % IntervalUnit.MINUTES.millisPerUnit) / IntervalUnit.SECONDS.millisPerUnit
+        val seconds = (millis % IntervalUnit.MINUTES.millisPerUnit) / 1_000L
         return buildString {
             if (hours > 0) append("${hours}h ")
             if (minutes > 0) append("${minutes}min ")

@@ -9,3 +9,7 @@
   - EN: "Works! Set default number to 80112 (the O2 SMS for booking new data credit), research the 10GB limit problem online and adjust the README to say it's very practical to send every 30 minutes. Default text to \"WEITER\", default interval 30 minutes, set version to 1.0."
 - "kopiere den gesamten workflow mit add_changelog und so aus Lalumo aus /var/www/Musici um es bei f-droid zu veräffentlichen"
   - EN: "Copy the whole workflow with add_changelog etc. from Lalumo in /var/www/Musici to publish it on F-Droid."
+- "suche online bei f-droid ob es schon so eine app gibt und beim playstore eine ohne werbung"
+  - EN: "Search online at F-Droid whether such an app already exists, and on the Play Store for one without ads."
+- "entferne das sekündliche, und minnuten auf minimal 10 minuten, das ist zu gefährlich und misbrauchbar"
+  - EN: "Remove seconds, and set minutes to a minimum of 10 minutes — too dangerous and abusable otherwise."

@@ -10,7 +10,7 @@ class SendConfigTest {
     private fun config(
         number: String = "+491234567890",
         message: String = "hello",
-        interval: Long = 60_000L,
+        interval: Long = 600_000L,
     ) = SendConfig(number, message, interval)
 
     @Test
@@ -65,6 +65,18 @@ class SendConfigTest {
     fun `negative interval is rejected`() {
         val errors = config(interval = -500L).validationErrors()
         assertTrue(SendConfig.ValidationError.NON_POSITIVE_INTERVAL in errors)
+    }
+
+    @Test
+    fun `interval below ten minutes is rejected`() {
+        val errors = config(interval = 599_999L).validationErrors()
+        assertTrue(SendConfig.ValidationError.INTERVAL_TOO_SHORT in errors)
+        assertFalse(SendConfig.ValidationError.NON_POSITIVE_INTERVAL in errors)
+    }
+
+    @Test
+    fun `exactly ten minutes is accepted`() {
+        assertTrue(config(interval = 600_000L).isValid())
     }
 
     @Test

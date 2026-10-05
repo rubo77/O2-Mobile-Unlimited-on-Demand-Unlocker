@@ -11,7 +11,7 @@
     <string name="label_message">Message text</string>
     <string name="hint_message">Text to send…</string>
     <string name="label_interval">Interval</string>
-    <string name="hint_interval">e.g. 5</string>
+    <string name="hint_interval">min. 10</string>
     <string name="label_log">Send log</string>
 
     <string name="action_start">Start</string>
@@ -26,10 +26,10 @@
     <string name="error_invalid_number">Invalid phone number</string>
     <string name="error_empty_message">Please enter a message text</string>
     <string name="error_invalid_interval">Invalid interval</string>
+    <string name="error_interval_too_short">Minimum interval is 10 minutes</string>
     <string name="error_permissions_denied">Permissions denied – cannot send SMS</string>
 
     <string-array name="interval_units">
-        <item>Seconds</item>
         <item>Minutes</item>
         <item>Hours</item>
     </string-array>

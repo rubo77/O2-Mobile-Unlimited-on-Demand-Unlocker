@@ -7,11 +7,6 @@ import org.junit.Test
 class IntervalParserTest {
 
     @Test
-    fun `parses seconds`() {
-        assertEquals(30_000L, IntervalParser.toMillis("30", IntervalUnit.SECONDS))
-    }
-
-    @Test
     fun `parses minutes`() {
         assertEquals(300_000L, IntervalParser.toMillis("5", IntervalUnit.MINUTES))
     }
@@ -23,12 +18,12 @@ class IntervalParserTest {
 
     @Test
     fun `trims whitespace`() {
-        assertEquals(1_000L, IntervalParser.toMillis("  1  ", IntervalUnit.SECONDS))
+        assertEquals(60_000L, IntervalParser.toMillis("  1  ", IntervalUnit.MINUTES))
     }
 
     @Test
     fun `rejects non-numeric input`() {
-        assertNull(IntervalParser.toMillis("abc", IntervalUnit.SECONDS))
+        assertNull(IntervalParser.toMillis("abc", IntervalUnit.MINUTES))
     }
 
     @Test
@@ -38,7 +33,7 @@ class IntervalParserTest {
 
     @Test
     fun `rejects zero`() {
-        assertNull(IntervalParser.toMillis("0", IntervalUnit.SECONDS))
+        assertNull(IntervalParser.toMillis("0", IntervalUnit.MINUTES))
     }
 
     @Test

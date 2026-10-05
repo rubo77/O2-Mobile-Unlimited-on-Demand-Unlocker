@@ -101,6 +101,7 @@ class MainActivity : Activity() {
                 SendConfig.ValidationError.INVALID_NUMBER -> R.string.error_invalid_number
                 SendConfig.ValidationError.EMPTY_MESSAGE -> R.string.error_empty_message
                 SendConfig.ValidationError.NON_POSITIVE_INTERVAL -> R.string.error_invalid_interval
+                SendConfig.ValidationError.INTERVAL_TOO_SHORT -> R.string.error_interval_too_short
             }
             showError(getString(resId))
             return null

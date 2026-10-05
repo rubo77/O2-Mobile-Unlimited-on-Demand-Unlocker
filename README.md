@@ -1,7 +1,7 @@
 # SMS-Bomb
 
 Android app that periodically sends an SMS with a user-defined text to a
-user-defined number at a configurable interval (seconds/minutes/hours).
+user-defined number at a configurable interval (minutes or hours, minimum 10 minutes).
 
 > Use responsibly. Sending unsolicited bulk SMS may be illegal and will cost
 > money depending on your mobile plan.
@@ -20,7 +20,7 @@ pre-filled accordingly; change them if your workflow differs.
 
 ## Features
 
-- Configurable recipient number, message text and interval
+- Configurable recipient number, message text and interval (minimum 10 minutes as abuse guard)
 - Foreground service keeps sending while the app is in the background
 - Long texts are automatically split into multipart SMS
 - In-app send log and live status (sent count, countdown to next send)
