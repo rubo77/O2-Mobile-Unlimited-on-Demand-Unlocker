@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMS-Bomb</string>
+    <string name="fg_service_subtype">Sends an SMS to a user-defined number at a user-defined interval</string>
+    <string name="notification_channel_name">SMS scheduler</string>
+    <string name="notification_sent_count">%1$d SMS sent</string>
+    <string name="status_starting">Scheduler starting…</string>
+
+    <string name="label_number">Phone number</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Message text</string>
+    <string name="hint_message">Text to send…</string>
+    <string name="label_interval">Interval</string>
+    <string name="hint_interval">e.g. 5</string>
+    <string name="label_log">Send log</string>
+
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+
+    <string name="status_idle">Idle</string>
+    <string name="status_running">Running – %1$d sent, next in %2$s</string>
+    <string name="status_last_error">last error: %1$s</string>
+    <string name="status_permissions_needed">Permissions required – please grant</string>
+
+    <string name="error_empty_number">Please enter a phone number</string>
+    <string name="error_invalid_number">Invalid phone number</string>
+    <string name="error_empty_message">Please enter a message text</string>
+    <string name="error_invalid_interval">Invalid interval</string>
+    <string name="error_permissions_denied">Permissions denied – cannot send SMS</string>
+
+    <string-array name="interval_units">
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+    </string-array>
+</resources>
