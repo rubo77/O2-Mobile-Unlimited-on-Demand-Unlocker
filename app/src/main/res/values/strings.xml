@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SMS-Bomb</string>
+    <string name="app_name" translatable="false">SMS-Bomb</string>
     <string name="fg_service_subtype">Sends an SMS to a user-defined number at a user-defined interval</string>
     <string name="notification_channel_name">SMS scheduler</string>
     <string name="notification_sent_count">%1$d SMS sent</string>

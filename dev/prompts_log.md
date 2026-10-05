@@ -13,3 +13,5 @@
   - EN: "Search online at F-Droid whether such an app already exists, and on the Play Store for one without ads."
 - "entferne das sekündliche, und minnuten auf minimal 10 minuten, das ist zu gefährlich und misbrauchbar"
   - EN: "Remove seconds, and set minutes to a minimum of 10 minutes — too dangerous and abusable otherwise."
+- "committe alles dann beue eine deutsche übersetzung ein und automatische erkennung der systemsprache"
+  - EN: "Commit everything, then add a German translation with automatic detection of the system language."

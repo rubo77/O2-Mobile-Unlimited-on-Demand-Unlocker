@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Sendet eine SMS im eingestellten Intervall an eine selbst gewählte Nummer</string>
+    <string name="notification_channel_name">SMS-Scheduler</string>
+    <string name="notification_sent_count">%1$d SMS gesendet</string>
+    <string name="status_starting">Scheduler startet…</string>
+
+    <string name="label_number">Telefonnummer</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Nachrichtentext</string>
+    <string name="hint_message">Zu sendender Text…</string>
+    <string name="label_interval">Intervall</string>
+    <string name="hint_interval">min. 10</string>
+    <string name="label_log">Sende-Protokoll</string>
+
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stopp</string>
+
+    <string name="status_idle">Bereit</string>
+    <string name="status_running">Läuft – %1$d gesendet, nächste in %2$s</string>
+    <string name="status_last_error">letzter Fehler: %1$s</string>
+    <string name="status_permissions_needed">Berechtigungen erforderlich – bitte erlauben</string>
+
+    <string name="error_empty_number">Bitte Telefonnummer eingeben</string>
+    <string name="error_invalid_number">Ungültige Telefonnummer</string>
+    <string name="error_empty_message">Bitte Nachrichtentext eingeben</string>
+    <string name="error_invalid_interval">Ungültiges Intervall</string>
+    <string name="error_interval_too_short">Mindestintervall ist 10 Minuten</string>
+    <string name="error_permissions_denied">Berechtigungen verweigert – SMS kann nicht gesendet werden</string>
+
+    <string-array name="interval_units">
+        <item>Minuten</item>
+        <item>Stunden</item>
+    </string-array>
+</resources>
