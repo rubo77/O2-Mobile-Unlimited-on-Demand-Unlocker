@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Verstuurt een sms naar een zelf gekozen nummer met een zelf gekozen interval</string>
+    <string name="notification_channel_name">Sms-planner</string>
+    <string name="notification_sent_count">%1$d sms\'en verzonden</string>
+    <string name="status_starting">Planner wordt gestart…</string>
+
+    <string name="label_number">Telefoonnummer</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Berichttekst</string>
+    <string name="hint_message">Te verzenden tekst…</string>
+    <string name="label_interval">Interval</string>
+    <string name="hint_interval">min. 10</string>
+    <string name="label_log">Verzendlogboek</string>
+
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+
+    <string name="status_idle">Inactief</string>
+    <string name="status_running">Actief – %1$d verzonden, volgende over %2$s</string>
+    <string name="status_last_error">laatste fout: %1$s</string>
+    <string name="status_permissions_needed">Machtigingen vereist – verleen ze</string>
+
+    <string name="error_empty_number">Voer een telefoonnummer in</string>
+    <string name="error_invalid_number">Ongeldig telefoonnummer</string>
+    <string name="error_empty_message">Voer een berichttekst in</string>
+    <string name="error_invalid_interval">Ongeldig interval</string>
+    <string name="error_interval_too_short">Minimaal interval is 10 minuten</string>
+    <string name="error_permissions_denied">Machtigingen geweigerd – sms kan niet worden verzonden</string>
+
+    <string-array name="interval_units">
+        <item>Minuten</item>
+        <item>Uren</item>
+    </string-array>
+</resources>

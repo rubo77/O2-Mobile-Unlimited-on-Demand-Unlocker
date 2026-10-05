@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">按用户设定的号码和间隔发送短信</string>
+    <string name="notification_channel_name">短信定时器</string>
+    <string name="notification_sent_count">已发送 %1$d 条短信</string>
+    <string name="status_starting">定时器正在启动…</string>
+
+    <string name="label_number">电话号码</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">短信内容</string>
+    <string name="hint_message">要发送的文本…</string>
+    <string name="label_interval">间隔</string>
+    <string name="hint_interval">最少 10</string>
+    <string name="label_log">发送日志</string>
+
+    <string name="action_start">开始</string>
+    <string name="action_stop">停止</string>
+
+    <string name="status_idle">空闲</string>
+    <string name="status_running">运行中 – 已发送 %1$d 条，下一条在 %2$s 后</string>
+    <string name="status_last_error">上次错误：%1$s</string>
+    <string name="status_permissions_needed">需要权限 – 请授予</string>
+
+    <string name="error_empty_number">请输入电话号码</string>
+    <string name="error_invalid_number">无效的电话号码</string>
+    <string name="error_empty_message">请输入短信内容</string>
+    <string name="error_invalid_interval">无效的间隔</string>
+    <string name="error_interval_too_short">最小间隔为 10 分钟</string>
+    <string name="error_permissions_denied">权限被拒绝 – 无法发送短信</string>
+
+    <string-array name="interval_units">
+        <item>分钟</item>
+        <item>小时</item>
+    </string-array>
+</resources>

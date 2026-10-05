@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Envía un SMS a un número definido por el usuario en un intervalo definido</string>
+    <string name="notification_channel_name">Programador de SMS</string>
+    <string name="notification_sent_count">%1$d SMS enviados</string>
+    <string name="status_starting">Iniciando el programador…</string>
+
+    <string name="label_number">Número de teléfono</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Texto del mensaje</string>
+    <string name="hint_message">Texto a enviar…</string>
+    <string name="label_interval">Intervalo</string>
+    <string name="hint_interval">mín. 10</string>
+    <string name="label_log">Registro de envíos</string>
+
+    <string name="action_start">Iniciar</string>
+    <string name="action_stop">Detener</string>
+
+    <string name="status_idle">Inactivo</string>
+    <string name="status_running">Activo – %1$d enviados, siguiente en %2$s</string>
+    <string name="status_last_error">último error: %1$s</string>
+    <string name="status_permissions_needed">Se requieren permisos – concédelos</string>
+
+    <string name="error_empty_number">Introduce un número de teléfono</string>
+    <string name="error_invalid_number">Número de teléfono no válido</string>
+    <string name="error_empty_message">Introduce un texto de mensaje</string>
+    <string name="error_invalid_interval">Intervalo no válido</string>
+    <string name="error_interval_too_short">El intervalo mínimo es de 10 minutos</string>
+    <string name="error_permissions_denied">Permisos denegados – no se puede enviar SMS</string>
+
+    <string-array name="interval_units">
+        <item>Minutos</item>
+        <item>Horas</item>
+    </string-array>
+</resources>

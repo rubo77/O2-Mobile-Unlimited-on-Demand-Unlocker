@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Отправляет SMS на заданный пользователем номер с заданным интервалом</string>
+    <string name="notification_channel_name">Планировщик SMS</string>
+    <string name="notification_sent_count">Отправлено SMS: %1$d</string>
+    <string name="status_starting">Планировщик запускается…</string>
+
+    <string name="label_number">Номер телефона</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Текст сообщения</string>
+    <string name="hint_message">Текст для отправки…</string>
+    <string name="label_interval">Интервал</string>
+    <string name="hint_interval">мин. 10</string>
+    <string name="label_log">Журнал отправки</string>
+
+    <string name="action_start">Старт</string>
+    <string name="action_stop">Стоп</string>
+
+    <string name="status_idle">Остановлен</string>
+    <string name="status_running">Работает – отправлено %1$d, следующее через %2$s</string>
+    <string name="status_last_error">последняя ошибка: %1$s</string>
+    <string name="status_permissions_needed">Требуются разрешения – предоставьте их</string>
+
+    <string name="error_empty_number">Введите номер телефона</string>
+    <string name="error_invalid_number">Неверный номер телефона</string>
+    <string name="error_empty_message">Введите текст сообщения</string>
+    <string name="error_invalid_interval">Неверный интервал</string>
+    <string name="error_interval_too_short">Минимальный интервал — 10 минут</string>
+    <string name="error_permissions_denied">Разрешения отклонены – отправка SMS невозможна</string>
+
+    <string-array name="interval_units">
+        <item>Минуты</item>
+        <item>Часы</item>
+    </string-array>
+</resources>

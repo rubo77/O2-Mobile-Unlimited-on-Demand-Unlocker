@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Wysyła SMS pod wskazany przez użytkownika numer w zadanym odstępie</string>
+    <string name="notification_channel_name">Harmonogram SMS</string>
+    <string name="notification_sent_count">Wysłano SMS-y: %1$d</string>
+    <string name="status_starting">Uruchamianie harmonogramu…</string>
+
+    <string name="label_number">Numer telefonu</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Treść wiadomości</string>
+    <string name="hint_message">Tekst do wysłania…</string>
+    <string name="label_interval">Interwał</string>
+    <string name="hint_interval">min. 10</string>
+    <string name="label_log">Dziennik wysyłki</string>
+
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+
+    <string name="status_idle">Bezczynny</string>
+    <string name="status_running">Działa – wysłano %1$d, następny za %2$s</string>
+    <string name="status_last_error">ostatni błąd: %1$s</string>
+    <string name="status_permissions_needed">Wymagane uprawnienia – przyznaj je</string>
+
+    <string name="error_empty_number">Wpisz numer telefonu</string>
+    <string name="error_invalid_number">Nieprawidłowy numer telefonu</string>
+    <string name="error_empty_message">Wpisz treść wiadomości</string>
+    <string name="error_invalid_interval">Nieprawidłowy interwał</string>
+    <string name="error_interval_too_short">Minimalny interwał to 10 minut</string>
+    <string name="error_permissions_denied">Odmówiono uprawnień – nie można wysłać SMS-a</string>
+
+    <string-array name="interval_units">
+        <item>Minuty</item>
+        <item>Godziny</item>
+    </string-array>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Envoie un SMS à un numéro défini par l\'utilisateur à un intervalle défini</string>
+    <string name="notification_channel_name">Planificateur de SMS</string>
+    <string name="notification_sent_count">%1$d SMS envoyés</string>
+    <string name="status_starting">Démarrage du planificateur…</string>
+
+    <string name="label_number">Numéro de téléphone</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Texte du message</string>
+    <string name="hint_message">Texte à envoyer…</string>
+    <string name="label_interval">Intervalle</string>
+    <string name="hint_interval">min. 10</string>
+    <string name="label_log">Journal d\'envoi</string>
+
+    <string name="action_start">Démarrer</string>
+    <string name="action_stop">Arrêter</string>
+
+    <string name="status_idle">Inactif</string>
+    <string name="status_running">Actif – %1$d envoyés, prochain dans %2$s</string>
+    <string name="status_last_error">dernière erreur : %1$s</string>
+    <string name="status_permissions_needed">Autorisations requises – veuillez les accorder</string>
+
+    <string name="error_empty_number">Veuillez saisir un numéro de téléphone</string>
+    <string name="error_invalid_number">Numéro de téléphone invalide</string>
+    <string name="error_empty_message">Veuillez saisir un texte de message</string>
+    <string name="error_invalid_interval">Intervalle invalide</string>
+    <string name="error_interval_too_short">L\'intervalle minimum est de 10 minutes</string>
+    <string name="error_permissions_denied">Autorisations refusées – impossible d\'envoyer le SMS</string>
+
+    <string-array name="interval_units">
+        <item>Minutes</item>
+        <item>Heures</item>
+    </string-array>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fg_service_subtype">Надсилає SMS на заданий користувачем номер із заданим інтервалом</string>
+    <string name="notification_channel_name">Планувальник SMS</string>
+    <string name="notification_sent_count">Надіслано SMS: %1$d</string>
+    <string name="status_starting">Планувальник запускається…</string>
+
+    <string name="label_number">Номер телефону</string>
+    <string name="hint_number">+491234567890</string>
+    <string name="label_message">Текст повідомлення</string>
+    <string name="hint_message">Текст для надсилання…</string>
+    <string name="label_interval">Інтервал</string>
+    <string name="hint_interval">мін. 10</string>
+    <string name="label_log">Журнал надсилання</string>
+
+    <string name="action_start">Старт</string>
+    <string name="action_stop">Стоп</string>
+
+    <string name="status_idle">Зупинено</string>
+    <string name="status_running">Працює – надіслано %1$d, наступне через %2$s</string>
+    <string name="status_last_error">остання помилка: %1$s</string>
+    <string name="status_permissions_needed">Потрібні дозволи – надайте їх</string>
+
+    <string name="error_empty_number">Введіть номер телефону</string>
+    <string name="error_invalid_number">Невірний номер телефону</string>
+    <string name="error_empty_message">Введіть текст повідомлення</string>
+    <string name="error_invalid_interval">Невірний інтервал</string>
+    <string name="error_interval_too_short">Мінімальний інтервал — 10 хвилин</string>
+    <string name="error_permissions_denied">Дозволи відхилено – SMS не може бути надіслано</string>
+
+    <string-array name="interval_units">
+        <item>Хвилини</item>
+        <item>Години</item>
+    </string-array>
+</resources>
