@@ -1,4 +1,4 @@
-O2 Free mit Weiter Speed Unlocker sends an SMS with a freely definable text to a freely definable number at a configurable interval (minutes or hours, minimum 10 minutes) — completely automatically, even in the background.
+O2 Mobile Unlimited on Demand Unlocker sends an SMS with a freely definable text to a freely definable number at a configurable interval (minutes or hours, minimum 10 minutes) — completely automatically, even in the background.
 
 <b>Typical use case: O2 Unlimited On Demand</b>
 The O2 "Mobile Unlimited On Demand" tariff includes 10 GB of high-speed data per day. Once 80 % is used, replying "WEITER" to 80112 books another free 2 GB block — repeatable without limit. This app automates exactly that: send "WEITER" to 80112 every 30 minutes without thinking about it.

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Release build script for O2 Free mit Weiter Speed Unlocker (adapted from Lalumo's mobile-build.sh,
+# Release build script for O2 Mobile Unlimited on Demand Unlocker (adapted from Lalumo's mobile-build.sh,
 # minus the Capacitor/npm parts — this is a pure Gradle project).
 #
 # Usage: bash release.sh [options]
@@ -15,7 +15,7 @@ UPDATE_VERSION=false
 
 show_help() {
   echo ""
-  echo "O2 Free mit Weiter Speed Unlocker Release Build Script"
+  echo "O2 Mobile Unlimited on Demand Unlocker Release Build Script"
   echo ""
   echo "Usage: bash release.sh [options]"
   echo "Options:"

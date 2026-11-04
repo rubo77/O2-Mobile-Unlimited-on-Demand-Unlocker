@@ -17,7 +17,7 @@
     <string name="action_test">テスト</string>
     <string name="action_about">アプリについて</string>
 
-    <string name="about_title">O2 Free mit Weiter Speed Unlocker について</string>
+    <string name="about_title">O2 Mobile Unlimited on Demand Unlocker について</string>
     <string name="about_version">バージョン %1$s</string>
     <string name="about_github">GitHub</string>
     <string name="label_random_factor">ランダム遅延（最大割合）</string>

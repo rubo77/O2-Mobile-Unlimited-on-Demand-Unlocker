@@ -6,7 +6,7 @@ Adapted from the Lalumo workflow (pure Gradle project, no Capacitor).
 
 - `metadata/com.smsbomb.app.yml` – F-Droid build metadata; a copy of this file
   is submitted to `fdroiddata` (https://gitlab.com/fdroid/fdroiddata)
-- F-Droid display name: `O2 Free mit Weiter Speed Unlocker`
+- F-Droid display name: `O2 Mobile Unlimited on Demand Unlocker`
 - `fastlane/metadata/android/{en-US,de}/` – store texts; F-Droid picks up
   `title.txt`, `short_description.txt`, `full_description.txt`, `changelogs/<versionCode>.txt`
 - `dev/add_changelog.sh` – generates fastlane changelogs and updates

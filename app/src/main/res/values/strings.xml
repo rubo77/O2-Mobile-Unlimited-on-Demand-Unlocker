@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">O2 Free mit Weiter Speed Unlocker</string>
+    <string name="app_name" translatable="false">O2 Mobile Unlimited on Demand Unlocker</string>
     <string name="notification_channel_name">SMS scheduler</string>
     <string name="notification_sent_count">%1$d SMS sent</string>
     <string name="status_starting">Scheduler starting…</string>
@@ -18,7 +18,7 @@
     <string name="action_test">Test</string>
     <string name="action_about">About</string>
 
-    <string name="about_title">About O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_title">About O2 Mobile Unlimited on Demand Unlocker</string>
     <string name="about_version">Version %1$s</string>
     <string name="about_github">GitHub</string>
 

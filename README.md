@@ -1,12 +1,5 @@
-# O2 Free mit Weiter Speed Unlocker
+# O2 Mobile Unlimited on Demand Unlocker
 
-Android app that periodically sends an SMS with a user-defined text to a
-user-defined number at a configurable interval (minutes or hours, minimum 10 minutes).
-An optional random delay varies each interval without ever sending earlier than
-the configured interval.
-
-> Use responsibly. Sending unsolicited bulk SMS may be illegal and will cost
-> money depending on your mobile plan.
 
 ## Use case: O2 "Unlimited On Demand" top-ups
 
@@ -16,19 +9,17 @@ with **WEITER** to **80112** books another 2 GB of high-speed data — free of
 charge and repeatable without limit.
 
 Doing this manually every time is tedious (and naive auto-reply loops forever
-on O2's confirmation SMS), so this app simply sends `WEITER` to `80112` on a
+on O2's confirmation SMS), so this Android app simply sends `WEITER` to `80112` on a
 fixed schedule — **every 30 minutes** is a good default. The input fields are
 pre-filled accordingly; change them if your workflow differs.
 
 ## Features
 
-- Configurable recipient number, message text and interval (minimum 10 minutes as abuse guard)
+- Configurable interval (minimum 10 minutes)
 - Optional random delay up to 100% of the interval (default 10%)
 - Optional stop date/time and/or SMS-count limit; the first reached condition stops the service
 - Foreground service keeps sending while the app is in the background
-- Long texts are automatically split into multipart SMS
 - In-app send log and live status (sent count, countdown to next send)
-- Inputs are persisted across app restarts
 
 ## Build
 

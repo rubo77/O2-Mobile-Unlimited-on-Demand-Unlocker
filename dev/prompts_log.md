@@ -19,7 +19,9 @@
   - EN: "Add all sensible language files."
 
 ## 26-11-04
-- "Baue einen definierbaren zufallsfaktor ein, so dass die nicht genau immer nach demselben Zeitraum abgesendet werden. Und baue eine endzeit und enddatum ein Wie lange der Service laufen soll und optional auch stattdessen nach wie viel SMS stoppen soll? Benenne die App um in \"O2 Free mit Weiter Speed Unlocker\""
-  - EN: "Add a configurable random factor so messages are not always sent after exactly the same interval. Add an end date and time to determine how long the service should run, and optionally allow it to stop after a specified number of SMS instead. Rename the app to \"O2 Free mit Weiter Speed Unlocker\"."
+- "Baue einen definierbaren zufallsfaktor ein, so dass die nicht genau immer nach demselben Zeitraum abgesendet werden. Und baue eine endzeit und enddatum ein Wie lange der Service laufen soll und optional auch stattdessen nach wie viel SMS stoppen soll? Benenne die App um in \"O2 Mobile Unlimited on Demand Unlocker\""
+  - EN: "Add a configurable random factor so messages are not always sent after exactly the same interval. Add an end date and time to determine how long the service should run, and optionally allow it to stop after a specified number of SMS instead. Rename the app to \"O2 Mobile Unlimited on Demand Unlocker\"."
 - "bau die app und lade sie auf mein handy"
   - EN: "Build the app and install it on my phone."
+- "formuliere das readme so um, dass die app nur dazu da ist, im O2 Tarif \"O2 Mobile Unlimited on Demand\" die Weiter sms automatisiert zu senden es darf nirgends der verdacht aufkommen, dass dies eine sms-bomb sei"
+  - EN: "Rewrite the README so the app is described as being solely for automatically sending the WEITER SMS for the O2 Mobile Unlimited On Demand tariff; nowhere should it raise suspicion that this is an SMS-bomb."
