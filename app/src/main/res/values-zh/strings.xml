@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">按用户设定的号码和间隔发送短信</string>
     <string name="notification_channel_name">短信定时器</string>
     <string name="notification_sent_count">已发送 %1$d 条短信</string>
     <string name="status_starting">定时器正在启动…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">开始</string>
     <string name="action_stop">停止</string>
+    <string name="action_test">测试</string>
+    <string name="action_about">关于</string>
+
+    <string name="about_title">关于 O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">版本 %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">随机延迟（最大百分比）</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">每个间隔最多增加此百分比的延迟；不会早于设定的间隔发送。</string>
+    <string name="label_enable_end_time">在指定日期和时间停止</string>
+    <string name="end_date_value">结束日期：%1$s</string>
+    <string name="end_time_value">结束时间：%1$s</string>
+    <string name="label_max_sms_count">发送指定条数短信后停止（可选）</string>
+    <string name="hint_max_sms_count">例如：10</string>
+    <string name="stop_condition_help">如果同时设置两个停止条件，服务将在任一条件满足时停止。</string>
+    <string name="error_invalid_random_factor">请输入 0 到 100 之间的随机延迟百分比</string>
+    <string name="error_end_time_in_past">结束日期和时间必须设为未来时间</string>
+    <string name="error_invalid_max_sms_count">请输入正整数短信条数</string>
+    <string name="status_stopped_end_time">已在设定时间停止（已发送 %1$d 条短信）</string>
+    <string name="status_stopped_sms_count">已达到设定短信条数并停止（已发送 %1$d 条）</string>
 
     <string name="status_idle">空闲</string>
     <string name="status_running">运行中 – 已发送 %1$d 条，下一条在 %2$s 后</string>

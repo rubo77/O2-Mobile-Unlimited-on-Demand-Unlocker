@@ -17,3 +17,9 @@
   - EN: "Commit everything, then add a German translation with automatic detection of the system language."
 - "ergänze alle sinnvollen sprachdateien"
   - EN: "Add all sensible language files."
+
+## 26-11-04
+- "Baue einen definierbaren zufallsfaktor ein, so dass die nicht genau immer nach demselben Zeitraum abgesendet werden. Und baue eine endzeit und enddatum ein Wie lange der Service laufen soll und optional auch stattdessen nach wie viel SMS stoppen soll? Benenne die App um in \"O2 Free mit Weiter Speed Unlocker\""
+  - EN: "Add a configurable random factor so messages are not always sent after exactly the same interval. Add an end date and time to determine how long the service should run, and optionally allow it to stop after a specified number of SMS instead. Rename the app to \"O2 Free mit Weiter Speed Unlocker\"."
+- "bau die app und lade sie auf mein handy"
+  - EN: "Build the app and install it on my phone."

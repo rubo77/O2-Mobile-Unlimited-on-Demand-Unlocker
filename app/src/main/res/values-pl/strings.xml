@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">Wysyła SMS pod wskazany przez użytkownika numer w zadanym odstępie</string>
     <string name="notification_channel_name">Harmonogram SMS</string>
     <string name="notification_sent_count">Wysłano SMS-y: %1$d</string>
     <string name="status_starting">Uruchamianie harmonogramu…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">Start</string>
     <string name="action_stop">Stop</string>
+    <string name="action_test">Test</string>
+    <string name="action_about">O aplikacji</string>
+
+    <string name="about_title">O O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Wersja %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">Losowe opóźnienie (maksymalny procent)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Dodaje do interwału maksymalnie ten procent; nie wysyła wcześniej niż po wybranym interwale.</string>
+    <string name="label_enable_end_time">Zatrzymaj o określonej dacie i godzinie</string>
+    <string name="end_date_value">Data zakończenia: %1$s</string>
+    <string name="end_time_value">Godzina zakończenia: %1$s</string>
+    <string name="label_max_sms_count">Zatrzymaj po tej liczbie SMS-ów (opcjonalnie)</string>
+    <string name="hint_max_sms_count">np. 10</string>
+    <string name="stop_condition_help">Jeśli ustawiono oba warunki, usługa zatrzyma się po spełnieniu któregokolwiek.</string>
+    <string name="error_invalid_random_factor">Wpisz losowe opóźnienie od 0 do 100 procent</string>
+    <string name="error_end_time_in_past">Data i godzina zakończenia muszą być w przyszłości</string>
+    <string name="error_invalid_max_sms_count">Wpisz dodatnią całkowitą liczbę SMS-ów</string>
+    <string name="status_stopped_end_time">Zatrzymano o ustawionej godzinie (%1$d wysłanych SMS-ów)</string>
+    <string name="status_stopped_sms_count">Zatrzymano po ustawionej liczbie SMS-ów (%1$d wysłanych)</string>
 
     <string name="status_idle">Bezczynny</string>
     <string name="status_running">Działa – wysłano %1$d, następny za %2$s</string>

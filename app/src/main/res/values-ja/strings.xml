@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">ユーザーが設定した番号に、設定した間隔でSMSを送信します</string>
     <string name="notification_channel_name">SMSスケジューラー</string>
     <string name="notification_sent_count">SMS %1$d 件送信済み</string>
     <string name="status_starting">スケジューラーを起動中…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">開始</string>
     <string name="action_stop">停止</string>
+    <string name="action_test">テスト</string>
+    <string name="action_about">アプリについて</string>
+
+    <string name="about_title">O2 Free mit Weiter Speed Unlocker について</string>
+    <string name="about_version">バージョン %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">ランダム遅延（最大割合）</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">指定した割合まで間隔に遅延を追加します。設定した間隔より早く送信されることはありません。</string>
+    <string name="label_enable_end_time">日時を指定して停止</string>
+    <string name="end_date_value">終了日：%1$s</string>
+    <string name="end_time_value">終了時刻：%1$s</string>
+    <string name="label_max_sms_count">指定件数のSMS送信後に停止（任意）</string>
+    <string name="hint_max_sms_count">例：10</string>
+    <string name="stop_condition_help">両方を設定した場合、先に到達した条件で停止します。</string>
+    <string name="error_invalid_random_factor">ランダム遅延を0～100％で入力してください</string>
+    <string name="error_end_time_in_past">終了日時は未来に設定してください</string>
+    <string name="error_invalid_max_sms_count">正の整数でSMS件数を入力してください</string>
+    <string name="status_stopped_end_time">設定した終了時刻に停止しました（%1$d件送信）</string>
+    <string name="status_stopped_sms_count">設定したSMS件数に達して停止しました（%1$d件送信）</string>
 
     <string name="status_idle">待機中</string>
     <string name="status_running">実行中 – %1$d 件送信、次回 %2$s 後</string>

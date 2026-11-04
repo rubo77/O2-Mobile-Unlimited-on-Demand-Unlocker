@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">Надсилає SMS на заданий користувачем номер із заданим інтервалом</string>
     <string name="notification_channel_name">Планувальник SMS</string>
     <string name="notification_sent_count">Надіслано SMS: %1$d</string>
     <string name="status_starting">Планувальник запускається…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">Старт</string>
     <string name="action_stop">Стоп</string>
+    <string name="action_test">Тест</string>
+    <string name="action_about">Про програму</string>
+
+    <string name="about_title">Про програму O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Версія %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">Випадкова затримка (максимальний відсоток)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Додає до інтервалу до вказаного відсотка; надсилання не відбувається раніше за обраний інтервал.</string>
+    <string name="label_enable_end_time">Зупинити у вказані дату й час</string>
+    <string name="end_date_value">Дата завершення: %1$s</string>
+    <string name="end_time_value">Час завершення: %1$s</string>
+    <string name="label_max_sms_count">Зупинити після цієї кількості SMS (необов’язково)</string>
+    <string name="hint_max_sms_count">напр., 10</string>
+    <string name="stop_condition_help">Якщо задано обидві умови, служба зупиниться після досягнення будь-якої з них.</string>
+    <string name="error_invalid_random_factor">Введіть випадкову затримку від 0 до 100 відсотків</string>
+    <string name="error_end_time_in_past">Дата й час завершення мають бути в майбутньому</string>
+    <string name="error_invalid_max_sms_count">Введіть додатне ціле число SMS</string>
+    <string name="status_stopped_end_time">Зупинено у вказаний час (%1$d SMS надіслано)</string>
+    <string name="status_stopped_sms_count">Зупинено після вказаної кількості SMS (надіслано %1$d)</string>
 
     <string name="status_idle">Зупинено</string>
     <string name="status_running">Працює – надіслано %1$d, наступне через %2$s</string>

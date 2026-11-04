@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">Verstuurt een sms naar een zelf gekozen nummer met een zelf gekozen interval</string>
     <string name="notification_channel_name">Sms-planner</string>
     <string name="notification_sent_count">%1$d sms\'en verzonden</string>
     <string name="status_starting">Planner wordt gestart…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">Start</string>
     <string name="action_stop">Stop</string>
+    <string name="action_test">Test</string>
+    <string name="action_about">Over</string>
+
+    <string name="about_title">Over O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Versie %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">Willekeurige vertraging (max. percentage)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Voegt maximaal dit percentage toe aan het interval; verzendt nooit eerder dan het ingestelde interval.</string>
+    <string name="label_enable_end_time">Stoppen op datum en tijd</string>
+    <string name="end_date_value">Einddatum: %1$s</string>
+    <string name="end_time_value">Eindtijd: %1$s</string>
+    <string name="label_max_sms_count">Stoppen na dit aantal sms\'en (optioneel)</string>
+    <string name="hint_max_sms_count">bijv. 10</string>
+    <string name="stop_condition_help">Als beide voorwaarden zijn ingesteld, stopt de service zodra één ervan is bereikt.</string>
+    <string name="error_invalid_random_factor">Voer een willekeurige vertraging van 0 tot 100 procent in</string>
+    <string name="error_end_time_in_past">De einddatum en -tijd moeten in de toekomst liggen</string>
+    <string name="error_invalid_max_sms_count">Voer een positief geheel aantal sms\'en in</string>
+    <string name="status_stopped_end_time">Gestopt op de ingestelde eindtijd (%1$d sms\'en verzonden)</string>
+    <string name="status_stopped_sms_count">Gestopt na het ingestelde aantal sms\'en (%1$d verzonden)</string>
 
     <string name="status_idle">Inactief</string>
     <string name="status_running">Actief – %1$d verzonden, volgende over %2$s</string>

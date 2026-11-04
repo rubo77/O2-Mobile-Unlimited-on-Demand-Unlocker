@@ -1,10 +1,12 @@
-SMS-Bomb versendet eine SMS mit frei definierbarem Text an eine frei definierbare Nummer in einem einstellbaren Intervall (Minuten oder Stunden, mindestens 10 Minuten) — vollautomatisch, auch im Hintergrund.
+O2 Free mit Weiter Speed Unlocker versendet eine SMS mit frei definierbarem Text an eine frei definierbare Nummer in einem einstellbaren Intervall (Minuten oder Stunden, mindestens 10 Minuten) — vollautomatisch, auch im Hintergrund.
 
 <b>Typischer Anwendungsfall: O2 Unlimited On Demand</b>
 Der O2-Tarif "Mobile Unlimited On Demand" enthält 10 GB Highspeed-Datenvolumen pro Tag. Sobald 80 % verbraucht sind, bucht eine SMS mit dem Text "WEITER" an 80112 kostenlos 2 GB Highspeed-Volumen nach — beliebig oft. Diese App automatisiert genau das: alle 30 Minuten "WEITER" an 80112 senden, ohne daran denken zu müssen.
 
 <b>Funktionen</b>
 - Einstellbare Empfängernummer, Text und Intervall (mindestens 10 Minuten als Schutz vor Missbrauch)
+- Optionale zufällige Verzögerung (Standard 10 %, bis zu 100 % des Intervalls); SMS werden nie früher als im eingestellten Intervall versendet
+- Optionales Enddatum mit Uhrzeit und SMS-Anzahl; der Dienst stoppt, sobald eine konfigurierte Bedingung erreicht ist
 - Foreground-Service sendet zuverlässig weiter, wenn die App im Hintergrund ist
 - Lange Texte werden automatisch als Multipart-SMS versendet
 - Sende-Protokoll und Live-Status in der App (Anzahl gesendeter SMS, Countdown)

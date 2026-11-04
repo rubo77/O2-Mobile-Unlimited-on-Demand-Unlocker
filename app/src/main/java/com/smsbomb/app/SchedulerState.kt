@@ -18,24 +18,30 @@ object SchedulerState {
     var nextSendAtMillis: Long? = null
         private set
 
+    @Volatile
+    var lastStopReason: SmsSchedulerEngine.StopReason? = null
+        private set
+
     @Synchronized
     fun markRunning(nextSendAt: Long?) {
         running = true
         sentCount = 0
         lastError = null
         nextSendAtMillis = nextSendAt
+        lastStopReason = null
     }
 
     @Synchronized
     fun recordSend(result: SendResult, nextSendAt: Long?) {
-        sentCount++
+        if (result.success) sentCount++
         lastError = result.error
         nextSendAtMillis = nextSendAt
     }
 
     @Synchronized
-    fun markStopped() {
+    fun markStopped(reason: SmsSchedulerEngine.StopReason?) {
         running = false
         nextSendAtMillis = null
+        lastStopReason = reason
     }
 }

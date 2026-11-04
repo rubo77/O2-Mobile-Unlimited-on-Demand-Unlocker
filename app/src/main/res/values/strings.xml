@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">SMS-Bomb</string>
-    <string name="fg_service_subtype">Sends an SMS to a user-defined number at a user-defined interval</string>
+    <string name="app_name" translatable="false">O2 Free mit Weiter Speed Unlocker</string>
     <string name="notification_channel_name">SMS scheduler</string>
     <string name="notification_sent_count">%1$d SMS sent</string>
     <string name="status_starting">Scheduler starting…</string>
@@ -16,6 +15,27 @@
 
     <string name="action_start">Start</string>
     <string name="action_stop">Stop</string>
+    <string name="action_test">Test</string>
+    <string name="action_about">About</string>
+
+    <string name="about_title">About O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_github">GitHub</string>
+
+    <string name="label_random_factor">Random delay (maximum percent)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Adds up to this percentage to each interval; never sends earlier than the selected interval.</string>
+    <string name="label_enable_end_time">Stop at a date and time</string>
+    <string name="end_date_value">End date: %1$s</string>
+    <string name="end_time_value">End time: %1$s</string>
+    <string name="label_max_sms_count">Stop after this many SMS (optional)</string>
+    <string name="hint_max_sms_count">e.g. 10</string>
+    <string name="stop_condition_help">If both stop conditions are set, the service stops when either one is reached.</string>
+    <string name="error_invalid_random_factor">Enter a random delay from 0 to 100 percent</string>
+    <string name="error_end_time_in_past">The end date and time must be in the future</string>
+    <string name="error_invalid_max_sms_count">Enter a positive whole number of SMS</string>
+    <string name="status_stopped_end_time">Stopped at the configured end time (%1$d SMS sent)</string>
+    <string name="status_stopped_sms_count">Stopped after the configured SMS count (%1$d sent)</string>
 
     <string name="status_idle">Idle</string>
     <string name="status_running">Running – %1$d sent, next in %2$s</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">Envoie un SMS à un numéro défini par l\'utilisateur à un intervalle défini</string>
     <string name="notification_channel_name">Planificateur de SMS</string>
     <string name="notification_sent_count">%1$d SMS envoyés</string>
     <string name="status_starting">Démarrage du planificateur…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">Démarrer</string>
     <string name="action_stop">Arrêter</string>
+    <string name="action_test">Test</string>
+    <string name="action_about">À propos</string>
+
+    <string name="about_title">À propos de O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">Délai aléatoire (pourcentage max.)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Ajoute jusqu’à ce pourcentage à chaque intervalle ; aucun envoi avant l’intervalle choisi.</string>
+    <string name="label_enable_end_time">Arrêter à une date et une heure</string>
+    <string name="end_date_value">Date de fin : %1$s</string>
+    <string name="end_time_value">Heure de fin : %1$s</string>
+    <string name="label_max_sms_count">Arrêter après ce nombre de SMS (facultatif)</string>
+    <string name="hint_max_sms_count">ex. 10</string>
+    <string name="stop_condition_help">Si les deux conditions sont définies, le service s’arrête dès que l’une est atteinte.</string>
+    <string name="error_invalid_random_factor">Saisissez un délai aléatoire de 0 à 100 %</string>
+    <string name="error_end_time_in_past">La date et l’heure de fin doivent être dans le futur</string>
+    <string name="error_invalid_max_sms_count">Saisissez un nombre entier positif de SMS</string>
+    <string name="status_stopped_end_time">Arrêt à l’heure définie (%1$d SMS envoyés)</string>
+    <string name="status_stopped_sms_count">Arrêt après le nombre de SMS défini (%1$d envoyés)</string>
 
     <string name="status_idle">Inactif</string>
     <string name="status_running">Actif – %1$d envoyés, prochain dans %2$s</string>

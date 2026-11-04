@@ -80,6 +80,44 @@ class SendConfigTest {
     }
 
     @Test
+    fun `random factor accepts values from zero through one hundred`() {
+        assertTrue(config().copy(randomFactorPercent = 0).isValid())
+        assertTrue(config().copy(randomFactorPercent = 100).isValid())
+    }
+
+    @Test
+    fun `random factor outside range is rejected`() {
+        assertTrue(
+            SendConfig.ValidationError.INVALID_RANDOM_FACTOR in
+                config().copy(randomFactorPercent = 101).validationErrors(),
+        )
+        assertTrue(
+            SendConfig.ValidationError.INVALID_RANDOM_FACTOR in
+                config().copy(randomFactorPercent = -1).validationErrors(),
+        )
+    }
+
+    @Test
+    fun `end time must be in the future`() {
+        assertTrue(
+            SendConfig.ValidationError.END_TIME_IN_PAST in
+                config().copy(endAtMillis = 1_000L).validationErrors(nowMillis = 1_000L),
+        )
+        assertTrue(
+            config().copy(endAtMillis = 1_001L).validationErrors(nowMillis = 1_000L).isEmpty(),
+        )
+    }
+
+    @Test
+    fun `sms limit must be positive`() {
+        assertTrue(
+            SendConfig.ValidationError.INVALID_MAX_SMS_COUNT in
+                config().copy(maxSmsCount = 0).validationErrors(),
+        )
+        assertTrue(config().copy(maxSmsCount = 1).isValid())
+    }
+
+    @Test
     fun `multiple errors are reported together`() {
         val errors = config(number = "", message = "", interval = -1L).validationErrors()
         assertEquals(

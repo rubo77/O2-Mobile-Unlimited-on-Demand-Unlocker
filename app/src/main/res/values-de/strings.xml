@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">Sendet eine SMS im eingestellten Intervall an eine selbst gewählte Nummer</string>
     <string name="notification_channel_name">SMS-Scheduler</string>
     <string name="notification_sent_count">%1$d SMS gesendet</string>
     <string name="status_starting">Scheduler startet…</string>
@@ -15,6 +14,27 @@
 
     <string name="action_start">Start</string>
     <string name="action_stop">Stopp</string>
+    <string name="action_test">Test</string>
+    <string name="action_about">Über</string>
+
+    <string name="about_title">Über O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_github">GitHub</string>
+
+    <string name="label_random_factor">Zufällige Verzögerung (max. Prozent)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Addiert bis zu diesen Prozent zum Intervall; sendet nie früher als das eingestellte Intervall.</string>
+    <string name="label_enable_end_time">Zu Datum und Uhrzeit stoppen</string>
+    <string name="end_date_value">Enddatum: %1$s</string>
+    <string name="end_time_value">Endzeit: %1$s</string>
+    <string name="label_max_sms_count">Nach dieser Anzahl SMS stoppen (optional)</string>
+    <string name="hint_max_sms_count">z. B. 10</string>
+    <string name="stop_condition_help">Wenn beide Stoppbedingungen gesetzt sind, stoppt der Dienst, sobald eine davon erreicht ist.</string>
+    <string name="error_invalid_random_factor">Zufallsverzögerung von 0 bis 100 Prozent eingeben</string>
+    <string name="error_end_time_in_past">Enddatum und -uhrzeit müssen in der Zukunft liegen</string>
+    <string name="error_invalid_max_sms_count">Eine positive ganze SMS-Anzahl eingeben</string>
+    <string name="status_stopped_end_time">Zur eingestellten Endzeit gestoppt (%1$d SMS gesendet)</string>
+    <string name="status_stopped_sms_count">Nach der eingestellten SMS-Anzahl gestoppt (%1$d gesendet)</string>
 
     <string name="status_idle">Bereit</string>
     <string name="status_running">Läuft – %1$d gesendet, nächste in %2$s</string>

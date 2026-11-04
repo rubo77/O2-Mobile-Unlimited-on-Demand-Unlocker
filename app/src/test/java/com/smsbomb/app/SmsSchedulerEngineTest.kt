@@ -156,7 +156,7 @@ class SmsSchedulerEngineTest {
         val result = engine.onTick()
         assertFalse(result!!.success)
         assertEquals("no radio", result.error)
-        assertEquals(1, engine.sentCount)
+        assertEquals(0, engine.sentCount)
         assertEquals(10_000L, engine.millisUntilNextSend())
     }
 
@@ -201,5 +201,131 @@ class SmsSchedulerEngineTest {
         clock.advance(10_000L)
         engine.onTick()
         assertEquals(2, sender.calls.size)
+    }
+
+    @Test
+    fun `random factor adds a bounded delay`() {
+        val clock = FakeClock()
+        val sender = FakeSender()
+        val config = SendConfig(
+            phoneNumber = "+49123",
+            message = "ping",
+            intervalMillis = 600_000L,
+            randomFactorPercent = 50,
+        )
+        val engine = SmsSchedulerEngine(
+            config = config,
+            sender = sender,
+            clock = { clock.now },
+            randomUnit = { 0.5 },
+        )
+
+        engine.start()
+
+        // 50% of 10 minutes, multiplied by a 0.5 sample, adds 150,000 ms.
+        assertEquals(750_000L, engine.millisUntilNextSend())
+    }
+
+    @Test
+    fun `random factor never schedules earlier than the base interval`() {
+        val clock = FakeClock()
+        val sender = FakeSender()
+        val engine = SmsSchedulerEngine(
+            config = SendConfig("+49123", "ping", 600_000L, randomFactorPercent = 100),
+            sender = sender,
+            clock = { clock.now },
+            randomUnit = { 0.0 },
+        )
+
+        engine.start()
+        assertEquals(600_000L, engine.millisUntilNextSend())
+    }
+
+    @Test
+    fun `end time stops before a later send`() {
+        val clock = FakeClock()
+        val sender = FakeSender()
+        val engine = SmsSchedulerEngine(
+            config = SendConfig("+49123", "ping", 600_000L, endAtMillis = 300_000L),
+            sender = sender,
+            clock = { clock.now },
+        )
+        engine.start()
+
+        assertEquals(300_000L, engine.millisUntilNextEvent())
+        clock.advance(300_000L)
+
+        assertNull(engine.onTick())
+        assertEquals(SmsSchedulerEngine.StopReason.END_TIME, engine.stopReason)
+        assertTrue(sender.calls.isEmpty())
+    }
+
+    @Test
+    fun `sms count limit stops after the configured number`() {
+        val clock = FakeClock()
+        val sender = FakeSender()
+        val engine = SmsSchedulerEngine(
+            config = SendConfig("+49123", "ping", 600_000L, maxSmsCount = 2),
+            sender = sender,
+            clock = { clock.now },
+            randomUnit = { 0.0 },
+        )
+        engine.start()
+
+        repeat(2) {
+            clock.advance(600_000L)
+            engine.onTick()
+        }
+
+        assertEquals(2, sender.calls.size)
+        assertEquals(2, engine.sentCount)
+        assertFalse(engine.running)
+        assertNull(engine.millisUntilNextEvent())
+        assertEquals(SmsSchedulerEngine.StopReason.MAX_SMS_COUNT, engine.stopReason)
+    }
+
+    @Test
+    fun `end time is checked even if no sms is due`() {
+        val clock = FakeClock()
+        val sender = FakeSender()
+        val engine = SmsSchedulerEngine(
+            config = SendConfig("+49123", "ping", 600_000L, endAtMillis = 300_000L),
+            sender = sender,
+            clock = { clock.now },
+        )
+        engine.start()
+        clock.advance(300_000L)
+
+        assertNull(engine.onTick())
+        assertFalse(engine.running)
+        assertEquals(SmsSchedulerEngine.StopReason.END_TIME, engine.stopReason)
+        assertTrue(sender.calls.isEmpty())
+    }
+
+    @Test
+    fun `failed sms does not consume the successful sms limit`() {
+        val clock = FakeClock()
+        val sender = FakeSender().apply {
+            nextResult = SendResult("+49123", "ping", 0L, success = false, error = "no radio")
+        }
+        val engine = SmsSchedulerEngine(
+            config = SendConfig("+49123", "ping", 600_000L, maxSmsCount = 1),
+            sender = sender,
+            clock = { clock.now },
+            randomUnit = { 0.0 },
+        )
+        engine.start()
+        clock.advance(600_000L)
+        engine.onTick()
+
+        assertTrue(engine.running)
+        assertEquals(0, engine.sentCount)
+        sender.nextResult = null
+        clock.advance(600_000L)
+        engine.onTick()
+
+        assertFalse(engine.running)
+        assertEquals(1, engine.sentCount)
+        assertEquals(SmsSchedulerEngine.StopReason.MAX_SMS_COUNT, engine.stopReason)
     }
 }

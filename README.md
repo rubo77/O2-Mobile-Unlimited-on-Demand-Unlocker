@@ -1,7 +1,9 @@
-# SMS-Bomb
+# O2 Free mit Weiter Speed Unlocker
 
 Android app that periodically sends an SMS with a user-defined text to a
 user-defined number at a configurable interval (minutes or hours, minimum 10 minutes).
+An optional random delay varies each interval without ever sending earlier than
+the configured interval.
 
 > Use responsibly. Sending unsolicited bulk SMS may be illegal and will cost
 > money depending on your mobile plan.
@@ -21,6 +23,8 @@ pre-filled accordingly; change them if your workflow differs.
 ## Features
 
 - Configurable recipient number, message text and interval (minimum 10 minutes as abuse guard)
+- Optional random delay up to 100% of the interval (default 10%)
+- Optional stop date/time and/or SMS-count limit; the first reached condition stops the service
 - Foreground service keeps sending while the app is in the background
 - Long texts are automatically split into multipart SMS
 - In-app send log and live status (sent count, countdown to next send)

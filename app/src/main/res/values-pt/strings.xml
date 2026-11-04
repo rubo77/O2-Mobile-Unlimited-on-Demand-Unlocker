@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="fg_service_subtype">Envia um SMS para um número definido pelo utilizador num intervalo definido</string>
     <string name="notification_channel_name">Agendador de SMS</string>
     <string name="notification_sent_count">%1$d SMS enviados</string>
     <string name="status_starting">A iniciar o agendador…</string>
@@ -15,6 +14,26 @@
 
     <string name="action_start">Iniciar</string>
     <string name="action_stop">Parar</string>
+    <string name="action_test">Teste</string>
+    <string name="action_about">Sobre</string>
+
+    <string name="about_title">Sobre O2 Free mit Weiter Speed Unlocker</string>
+    <string name="about_version">Versão %1$s</string>
+    <string name="about_github">GitHub</string>
+    <string name="label_random_factor">Atraso aleatório (percentagem máxima)</string>
+    <string name="hint_random_factor">10</string>
+    <string name="random_factor_help">Adiciona até esta percentagem ao intervalo; nunca envia antes do intervalo escolhido.</string>
+    <string name="label_enable_end_time">Parar numa data e hora</string>
+    <string name="end_date_value">Data de fim: %1$s</string>
+    <string name="end_time_value">Hora de fim: %1$s</string>
+    <string name="label_max_sms_count">Parar após este número de SMS (opcional)</string>
+    <string name="hint_max_sms_count">ex.: 10</string>
+    <string name="stop_condition_help">Se ambas as condições estiverem definidas, o serviço para quando uma delas for atingida.</string>
+    <string name="error_invalid_random_factor">Introduz um atraso aleatório entre 0 e 100 por cento</string>
+    <string name="error_end_time_in_past">A data e hora de fim têm de estar no futuro</string>
+    <string name="error_invalid_max_sms_count">Introduz um número inteiro positivo de SMS</string>
+    <string name="status_stopped_end_time">Parado à hora definida (%1$d SMS enviados)</string>
+    <string name="status_stopped_sms_count">Parado após o número de SMS definido (%1$d enviados)</string>
 
     <string name="status_idle">Inativo</string>
     <string name="status_running">Ativo – %1$d enviados, próximo em %2$s</string>

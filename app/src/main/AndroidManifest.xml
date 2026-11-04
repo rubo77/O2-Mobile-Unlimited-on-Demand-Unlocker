@@ -27,7 +27,7 @@
             android:foregroundServiceType="specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="@string/fg_service_subtype" />
+                android:value="Sends SMS messages at a user-configured interval" />
         </service>
     </application>
 

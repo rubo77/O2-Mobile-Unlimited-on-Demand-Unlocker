@@ -14,7 +14,7 @@ import android.util.Log
 
 /**
  * Foreground service that sends an SMS every [SendConfig.intervalMillis].
- * Uses a [Handler] loop driven by [SmsSchedulerEngine.millisUntilNextSend].
+ * Uses a [Handler] loop driven by [SmsSchedulerEngine.millisUntilNextEvent].
  */
 class SmsSchedulerService : Service() {
 
@@ -35,8 +35,15 @@ class SmsSchedulerService : Service() {
                         error = result.error,
                     )
                 )
-                SchedulerState.recordSend(result, current.millisUntilNextSend()?.let { System.currentTimeMillis() + it })
-                Log.d(TAG, "[SCHED] sent #${current.sentCount} success=${result.success}")
+                SchedulerState.recordSend(
+                    result,
+                    current.millisUntilNextSend()?.let { System.currentTimeMillis() + it },
+                )
+                Log.d(TAG, "[SCHED] attempt complete success=${result.success} sent=${current.sentCount}")
+            }
+            if (!current.running) {
+                stopScheduler(current.stopReason)
+                return
             }
             updateNotification()
             scheduleNextTick()
@@ -56,6 +63,17 @@ class SmsSchedulerService : Service() {
                     phoneNumber = intent.getStringExtra(EXTRA_NUMBER).orEmpty(),
                     message = intent.getStringExtra(EXTRA_MESSAGE).orEmpty(),
                     intervalMillis = intent.getLongExtra(EXTRA_INTERVAL_MILLIS, 0L),
+                    randomFactorPercent = intent.getIntExtra(EXTRA_RANDOM_FACTOR_PERCENT, 0),
+                    endAtMillis = if (intent.hasExtra(EXTRA_END_AT_MILLIS)) {
+                        intent.getLongExtra(EXTRA_END_AT_MILLIS, 0L)
+                    } else {
+                        null
+                    },
+                    maxSmsCount = if (intent.hasExtra(EXTRA_MAX_SMS_COUNT)) {
+                        intent.getIntExtra(EXTRA_MAX_SMS_COUNT, 0)
+                    } else {
+                        null
+                    },
                 )
                 val errors = config.validationErrors()
                 if (errors.isNotEmpty()) {
@@ -81,31 +99,44 @@ class SmsSchedulerService : Service() {
             clock = System::currentTimeMillis,
         ).also { it.start() }
 
+        if (engine?.running != true) {
+            stopScheduler(engine?.stopReason)
+            return
+        }
+
         SchedulerState.markRunning(
-            nextSendAt = System.currentTimeMillis() + config.intervalMillis
+            nextSendAt = engine?.millisUntilNextSend()?.let { System.currentTimeMillis() + it }
         )
-        Log.i(TAG, "[SCHED] started: number=${config.phoneNumber} interval=${config.intervalMillis}ms")
+        Log.i(
+            TAG,
+            "[SCHED] started: number=${config.phoneNumber} interval=${config.intervalMillis}ms " +
+                "random=${config.randomFactorPercent}% endAt=${config.endAtMillis} maxSms=${config.maxSmsCount}",
+        )
         scheduleNextTick()
     }
 
-    private fun stopScheduler() {
+    private fun stopScheduler(
+        reason: SmsSchedulerEngine.StopReason? = SmsSchedulerEngine.StopReason.USER_STOP,
+    ) {
         handler.removeCallbacks(tick)
-        engine?.stop()
+        if (engine?.running == true) engine?.stop()
         engine = null
-        SchedulerState.markStopped()
-        Log.i(TAG, "[SCHED] stopped")
+        SchedulerState.markStopped(reason)
+        Log.i(TAG, "[SCHED] stopped: reason=$reason")
         stopForeground(STOP_FOREGROUND_REMOVE)
         stopSelf()
     }
 
     private fun scheduleNextTick() {
-        val delay = engine?.millisUntilNextSend() ?: return
+        val delay = engine?.millisUntilNextEvent() ?: return
         handler.postDelayed(tick, delay.coerceAtLeast(MIN_TICK_DELAY_MILLIS))
     }
 
     override fun onDestroy() {
         handler.removeCallbacks(tick)
-        SchedulerState.markStopped()
+        if (SchedulerState.running) {
+            SchedulerState.markStopped(SmsSchedulerEngine.StopReason.USER_STOP)
+        }
         super.onDestroy()
     }
 
@@ -152,6 +183,9 @@ class SmsSchedulerService : Service() {
         const val EXTRA_NUMBER = "extra_number"
         const val EXTRA_MESSAGE = "extra_message"
         const val EXTRA_INTERVAL_MILLIS = "extra_interval_millis"
+        const val EXTRA_RANDOM_FACTOR_PERCENT = "extra_random_factor_percent"
+        const val EXTRA_END_AT_MILLIS = "extra_end_at_millis"
+        const val EXTRA_MAX_SMS_COUNT = "extra_max_sms_count"
 
         fun startIntent(context: Context, config: SendConfig): Intent =
             Intent(context, SmsSchedulerService::class.java)
@@ -159,6 +193,11 @@ class SmsSchedulerService : Service() {
                 .putExtra(EXTRA_NUMBER, config.phoneNumber)
                 .putExtra(EXTRA_MESSAGE, config.message)
                 .putExtra(EXTRA_INTERVAL_MILLIS, config.intervalMillis)
+                .putExtra(EXTRA_RANDOM_FACTOR_PERCENT, config.randomFactorPercent)
+                .apply {
+                    config.endAtMillis?.let { putExtra(EXTRA_END_AT_MILLIS, it) }
+                    config.maxSmsCount?.let { putExtra(EXTRA_MAX_SMS_COUNT, it) }
+                }
 
         fun stopIntent(context: Context): Intent =
             Intent(context, SmsSchedulerService::class.java).setAction(ACTION_STOP)
