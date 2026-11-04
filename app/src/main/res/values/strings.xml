@@ -16,6 +16,9 @@
     <string name="action_start">Start</string>
     <string name="action_stop">Stop</string>
     <string name="action_test">Test</string>
+    <string name="advanced_title">Advanced settings</string>
+    <string name="advanced_collapsed">Advanced settings, collapsed</string>
+    <string name="advanced_expanded">Advanced settings, expanded</string>
     <string name="action_about">About</string>
 
     <string name="about_title">About O2 Mobile Unlimited on Demand Unlocker</string>

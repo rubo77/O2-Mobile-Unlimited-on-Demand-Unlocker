@@ -15,6 +15,9 @@
     <string name="action_start">Старт</string>
     <string name="action_stop">Стоп</string>
     <string name="action_test">Тест</string>
+    <string name="advanced_title">Додатково</string>
+    <string name="advanced_collapsed">Додаткові налаштування, згорнуто</string>
+    <string name="advanced_expanded">Додаткові налаштування, розгорнуто</string>
     <string name="action_about">Про програму</string>
 
     <string name="about_title">Про програму O2 Mobile Unlimited on Demand Unlocker</string>

@@ -22,6 +22,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toolbar
@@ -39,6 +40,8 @@ class MainActivity : Activity() {
     private lateinit var etRandomFactor: EditText
     private lateinit var etMaxSmsCount: EditText
     private lateinit var spinnerUnit: Spinner
+    private lateinit var btnAdvanced: Button
+    private lateinit var advancedFields: LinearLayout
     private lateinit var cbEndAt: CheckBox
     private lateinit var btnEndDate: Button
     private lateinit var btnEndTime: Button
@@ -49,6 +52,7 @@ class MainActivity : Activity() {
 
     private enum class PendingAction { START, TEST }
     private var pendingAction: PendingAction? = null
+    private var advancedExpanded = false
     private var selectedEndAtMillis = defaultEndAtMillis()
 
     private val handler = Handler(Looper.getMainLooper())
@@ -73,6 +77,8 @@ class MainActivity : Activity() {
         etRandomFactor = findViewById(R.id.etRandomFactor)
         etMaxSmsCount = findViewById(R.id.etMaxSmsCount)
         spinnerUnit = findViewById(R.id.spinnerUnit)
+        btnAdvanced = findViewById(R.id.btnAdvanced)
+        advancedFields = findViewById(R.id.advancedFields)
         cbEndAt = findViewById(R.id.cbEndAt)
         btnEndDate = findViewById(R.id.btnEndDate)
         btnEndTime = findViewById(R.id.btnEndTime)
@@ -93,6 +99,7 @@ class MainActivity : Activity() {
         restoreInputs()
         btnToggle.setOnClickListener { onToggleClicked() }
         btnTest.setOnClickListener { onTestClicked() }
+        btnAdvanced.setOnClickListener { setAdvancedExpanded(!advancedExpanded) }
         cbEndAt.setOnCheckedChangeListener { _, checked -> setEndDateControlsEnabled(checked) }
         btnEndDate.setOnClickListener { showEndDatePicker() }
         btnEndTime.setOnClickListener { showEndTimePicker() }
@@ -355,6 +362,14 @@ class MainActivity : Activity() {
     private fun setEndDateControlsEnabled(enabled: Boolean) {
         btnEndDate.isEnabled = enabled
         btnEndTime.isEnabled = enabled
+    }
+
+    private fun setAdvancedExpanded(expanded: Boolean) {
+        advancedExpanded = expanded
+        advancedFields.visibility = if (expanded) View.VISIBLE else View.GONE
+        btnAdvanced.contentDescription = getString(
+            if (expanded) R.string.advanced_expanded else R.string.advanced_collapsed
+        )
     }
 
     private fun showEndDatePicker() {

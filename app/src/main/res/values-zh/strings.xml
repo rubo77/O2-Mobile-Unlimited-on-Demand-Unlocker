@@ -15,6 +15,9 @@
     <string name="action_start">开始</string>
     <string name="action_stop">停止</string>
     <string name="action_test">测试</string>
+    <string name="advanced_title">高级设置</string>
+    <string name="advanced_collapsed">高级设置，已折叠</string>
+    <string name="advanced_expanded">高级设置，已展开</string>
     <string name="action_about">关于</string>
 
     <string name="about_title">关于 O2 Mobile Unlimited on Demand Unlocker</string>

@@ -15,6 +15,9 @@
     <string name="action_start">開始</string>
     <string name="action_stop">停止</string>
     <string name="action_test">テスト</string>
+    <string name="advanced_title">詳細設定</string>
+    <string name="advanced_collapsed">詳細設定、折りたたみ</string>
+    <string name="advanced_expanded">詳細設定、展開</string>
     <string name="action_about">アプリについて</string>
 
     <string name="about_title">O2 Mobile Unlimited on Demand Unlocker について</string>
